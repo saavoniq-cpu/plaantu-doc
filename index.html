@@ -1,271 +1,289 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polityka Prywatności — Plaantu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plaantu — Polityka prywatności / Privacy Policy</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f4f0e8;
-    color: #1a1a14;
-    line-height: 1.7;
-  }
-
-  header {
-    background: linear-gradient(160deg, #1a2e1a 0%, #3d6234 100%);
-    padding: 48px 24px 40px;
-    text-align: center;
-  }
-
-  .logo {
-    font-size: 32px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .logo span { color: #6aaa6a; }
-
-  header p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    font-weight: 300;
-  }
-
-  main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  .meta {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    border-left: 4px solid #3d7a3d;
-    font-size: 13px;
-    color: #8a8578;
-  }
-
-  .meta strong { color: #1a1a14; }
-
-  h2 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a2e1a;
-    margin-top: 40px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e8e2d4;
-  }
-
-  h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a1a14;
-    margin-top: 20px;
-    margin-bottom: 8px;
-  }
-
-  p {
-    font-size: 14px;
-    color: #3a3a2e;
-    margin-bottom: 12px;
-  }
-
-  ul {
-    margin: 8px 0 16px 20px;
-    font-size: 14px;
-    color: #3a3a2e;
-  }
-
-  ul li { margin-bottom: 6px; }
-
-  .section {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 16px;
-    box-shadow: 0 1px 4px rgba(26,46,26,0.06);
-  }
-
-  .section h2 {
-    margin-top: 0;
-    font-size: 16px;
-  }
-
-  .contact-box {
-    background: #1a2e1a;
-    border-radius: 16px;
-    padding: 24px;
-    margin-top: 32px;
-    text-align: center;
-  }
-
-  .contact-box p { color: rgba(255,255,255,0.7); margin-bottom: 8px; }
-
-  .contact-box a {
-    color: #6aaa6a;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 16px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 24px;
-    font-size: 12px;
-    color: #8a8578;
+  :root { --green:#3d7a3d; --dark:#1a2e1a; --ink:#1a1a14; --muted:#6b675c; --bg:#f7f5ef; --line:#e3ddcd; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { border-bottom:2px solid var(--green); padding-bottom:16px; margin-bottom:28px; }
+  h1 { font-size:1.7rem; margin:0 0 6px; color:var(--dark); }
+  h2 { font-size:1.2rem; margin:34px 0 10px; color:var(--dark); }
+  h3 { font-size:1rem; margin:22px 0 6px; color:var(--dark); }
+  .sub { color:var(--muted); font-size:.92rem; margin:0; }
+  .lang { display:flex; gap:8px; margin:18px 0 0; }
+  .lang a { text-decoration:none; padding:6px 14px; border:1px solid var(--line);
+            border-radius:999px; color:var(--dark); background:#fff; font-size:.9rem; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:.93rem;
+          display:block; overflow-x:auto; }
+  th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#eee9dc; }
+  code { background:#eee9dc; padding:1px 5px; border-radius:4px; font-size:.88em; }
+  ul { padding-left:20px; }
+  footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line);
+           color:var(--muted); font-size:.87rem; }
+  hr.sep { border:0; border-top:1px solid var(--line); margin:56px 0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#15170f; --ink:#ece7d8; --muted:#9c9885; --line:#33362a; --dark:#c7dcb3; }
+    body { background:#15170f; color:#ece7d8; }
+    th { background:#23261b; } code { background:#23261b; }
+    .lang a { background:#1d2016; color:#ece7d8; }
   }
 </style>
 </head>
 <body>
+<div class="wrap">
 
 <header>
-  <div class="logo">pl<span>aa</span>ntu</div>
-  <p>Polityka Prywatności</p>
+  <h1>Plaantu — Polityka prywatności</h1>
+  <p class="sub">Ostatnia aktualizacja: 31 lipca 2026</p>
+  <div class="lang"><a href="#pl">Polski</a><a href="#en">English</a></div>
 </header>
 
-<main>
+<section id="pl">
 
-  <div class="meta">
-    <strong>Data ostatniej aktualizacji:</strong> 29 czerwca 2026
-  </div>
+<h2>1. Kto jest administratorem danych</h2>
+<p>Administratorem danych osobowych przetwarzanych w aplikacji mobilnej <strong>Plaantu</strong> jest
+wydawca aplikacji, dostępny pod adresem <strong>saavoniq@gmail.com</strong>. W sprawach dotyczących
+danych osobowych prosimy o kontakt na ten adres.</p>
 
-  <div class="section">
-    <h2>1. Administrator danych</h2>
-    <p>Administratorem danych osobowych zbieranych w aplikacji Plaantu jest:</p>
-    <p><strong>Saavoniq s.c.</strong><br>Kontakt: <a href="mailto:saavoniq@gmail.com">saavoniq@gmail.com</a></p>
-    <p>W razie pytań dotyczących przetwarzania danych osobowych lub realizacji praw wynikających z RODO, prosimy o kontakt na powyższy adres e-mail.</p>
-  </div>
+<h2>2. Jakie dane zbieramy</h2>
 
-  <div class="section">
-    <h2>2. Jakie dane zbieramy</h2>
+<h3>Dane konta</h3>
+<ul>
+  <li>adres e-mail (rejestracja e-mailem, przez Google albo Facebooka),</li>
+  <li>nazwa użytkownika i nazwa wyświetlana,</li>
+  <li>zdjęcie profilowe albo wybrany awatar — jeśli je ustawisz,</li>
+  <li>miasto podane przy pierwszym uruchomieniu, wraz z jego współrzędnymi.</li>
+</ul>
+<p><strong>Aplikacja nie odczytuje lokalizacji urządzenia.</strong> Miasto wpisujesz samodzielnie i służy
+wyłącznie do pobrania prognozy pogody, na podstawie której liczony jest harmonogram podlewania.</p>
 
-    <h3>2.1 Dane podawane przez użytkownika</h3>
-    <ul>
-      <li>Adres e-mail i hasło (przy rejestracji konta)</li>
-      <li>Imię lub nazwa wyświetlana w aplikacji</li>
-      <li>Miasto (podawane ręcznie — aplikacja nie zbiera lokalizacji GPS)</li>
-      <li>Zdjęcia roślin dodawane do kolekcji lub publikowane w sekcji „Dżungla"</li>
-      <li>Treści tworzone w aplikacji: opisy roślin, komentarze, posty, tagi</li>
-    </ul>
+<h3>Dane o roślinach</h3>
+<ul>
+  <li>nazwy i gatunki roślin, pomieszczenia, ustawienia stanowiska,</li>
+  <li>historia podlewania, nawożenia i przesadzania,</li>
+  <li>notatki tekstowe i zdjęcia roślin, które dodasz,</li>
+  <li>lista życzeń.</li>
+</ul>
 
-    <h3>2.2 Dane zbierane automatycznie</h3>
-    <ul>
-      <li>Dane techniczne dotyczące korzystania z aplikacji (statystyki użycia) — za pomocą Firebase Analytics</li>
-      <li>Raporty błędów i awarii aplikacji — za pomocą Firebase Crashlytics</li>
-      <li>Dane przechowywane lokalnie na urządzeniu w celu zapewnienia działania powiadomień i przypomnień</li>
-    </ul>
-    <p>Aplikacja <strong>nie zbiera danych o lokalizacji GPS</strong> użytkownika.</p>
+<h3>Dane społecznościowe (Dżungla)</h3>
+<ul>
+  <li>posty, zdjęcia, komentarze i polubienia, które publikujesz,</li>
+  <li>lista obserwowanych i obserwujących,</li>
+  <li>zgłoszenia treści, jeśli je wyślesz.</li>
+</ul>
+<p>Treści opublikowane w Dżungli są widoczne dla innych użytkowników aplikacji.</p>
 
-    <h3>2.3 Dostęp do funkcji urządzenia</h3>
-    <ul>
-      <li><strong>Aparat</strong> — do robienia zdjęć roślin, skanowania/rozpoznawania gatunków oraz funkcji luksomierza (iOS)</li>
-      <li><strong>Galeria zdjęć</strong> — do wyboru i dodawania zdjęć z urządzenia</li>
-      <li><strong>Powiadomienia push</strong> — do wysyłania przypomnień o podlewaniu oraz powiadomień społecznościowych</li>
-    </ul>
-    <p>Każde z uprawnień jest opcjonalne i można je wyłączyć w ustawieniach systemowych urządzenia.</p>
-  </div>
+<h3>Dane programu lojalnościowego (Listki)</h3>
+<ul>
+  <li>liczba zebranych Listków, osiągnięty poziom i zdobyte nagrody,</li>
+  <li><strong>dzienny rejestr aktywności</strong> — ile razy danego dnia podlałeś roślinę, dodałeś
+      notatkę, zdjęcie, post czy komentarz. Rejestr służy wyłącznie do egzekwowania dziennych
+      limitów naliczania i obejmuje tylko bieżący dzień — starsze wpisy są nadpisywane.</li>
+</ul>
+<p><strong>Twój poziom i tytuł są widoczne publicznie w Dżungli</strong> — przy Twoim nicku pojawia się
+ramka w kolorze odpowiadającym poziomowi, a od poziomu 15 również tytuł. Inni użytkownicy mogą więc
+zorientować się, jak długo i jak intensywnie korzystasz z aplikacji. Jeśli sobie tego nie życzysz,
+w ustawieniach profilu możesz wyłączyć pokazywanie poziomu. Listki naliczają się wtedy dalej, ale
+ramka i tytuł przestają pojawiać się przy Twoich <strong>nowych</strong> postach i komentarzach.
+Treści opublikowane wcześniej zachowują poziom zapisany w chwili publikacji — możesz je usunąć,
+jeśli chcesz, żeby zniknął.</p>
+<p>Poziom wpływa na dostęp do niektórych funkcji (dodatkowe diagnozy, pytania do Doradcy, miejsca na
+rośliny). Nie jest to jednak zautomatyzowane podejmowanie decyzji w rozumieniu art. 22 RODO —
+zasady są jawne, jednakowe dla wszystkich i opisane w Regulaminie.</p>
 
-  <div class="section">
-    <h2>3. Cel przetwarzania danych</h2>
-    <ul>
-      <li>Świadczenie usług aplikacji (zarządzanie kolekcją roślin, przypomnienia o pielęgnacji)</li>
-      <li>Umożliwienie korzystania z funkcji społecznościowych (Dżungla)</li>
-      <li>Rozpoznawanie gatunków roślin i diagnozowanie chorób przy użyciu sztucznej inteligencji</li>
-      <li>Realizacji subskrypcji płatnych (plany Plus i Pro)</li>
-      <li>Poprawa działania i stabilności aplikacji (analiza błędów, statystyki użycia)</li>
-      <li>Komunikacja z użytkownikiem (powiadomienia, obsługa zgłoszeń)</li>
-    </ul>
-  </div>
+<h3>Dane techniczne</h3>
+<ul>
+  <li>anonimowe zdarzenia analityczne (Firebase Analytics) — jakie ekrany i funkcje są używane,</li>
+  <li>raporty o awariach (Firebase Crashlytics) — model urządzenia, wersja systemu, ślad błędu.</li>
+</ul>
 
-  <div class="section">
-    <h2>4. Podstawa prawna przetwarzania</h2>
-    <p>Zgodnie z RODO (Rozporządzenie 2016/679), dane przetwarzane są na podstawie:</p>
-    <ul>
-      <li><strong>art. 6 ust. 1 lit. b)</strong> — wykonanie umowy (świadczenie usługi aplikacji)</li>
-      <li><strong>art. 6 ust. 1 lit. a)</strong> — zgoda użytkownika (np. powiadomienia push, dostęp do aparatu)</li>
-      <li><strong>art. 6 ust. 1 lit. f)</strong> — prawnie uzasadniony interes administratora (analiza błędów, statystyki, zapobieganie nadużyciom)</li>
-    </ul>
-  </div>
+<h2>3. Po co przetwarzamy dane i na jakiej podstawie</h2>
+<table>
+  <tr><th>Cel</th><th>Zakres</th><th>Podstawa prawna (RODO)</th></tr>
+  <tr><td>Prowadzenie konta i świadczenie usługi</td><td>dane konta, dane o roślinach</td><td>art. 6 ust. 1 lit. b — wykonanie umowy</td></tr>
+  <tr><td>Harmonogram i powiadomienia o podlewaniu</td><td>miasto, dane o roślinach</td><td>art. 6 ust. 1 lit. b</td></tr>
+  <tr><td>Rozpoznawanie i diagnoza roślin ze zdjęcia</td><td>zdjęcie przesłane przez Ciebie</td><td>art. 6 ust. 1 lit. b</td></tr>
+  <tr><td>Funkcje społecznościowe</td><td>posty, komentarze, obserwacje</td><td>art. 6 ust. 1 lit. b</td></tr>
+  <tr><td>Poprawa działania i stabilności aplikacji</td><td>analityka, raporty awarii</td><td>art. 6 ust. 1 lit. f — uzasadniony interes</td></tr>
+  <tr><td>Obsługa zgłoszeń</td><td>treść zgłoszenia, nazwa, identyfikator konta</td><td>art. 6 ust. 1 lit. f</td></tr>
+  <tr><td>Program lojalnościowy (Listki i poziomy)</td><td>Listki, poziom, nagrody, dzienny rejestr aktywności</td><td>art. 6 ust. 1 lit. b — wykonanie umowy</td></tr>
+  <tr><td>Przeciwdziałanie nadużyciom w programie</td><td>dzienny rejestr aktywności, historia naliczeń</td><td>art. 6 ust. 1 lit. f — uzasadniony interes</td></tr>
+</table>
 
-  <div class="section">
-    <h2>5. Odbiorcy danych</h2>
-    <ul>
-      <li><strong>Google Firebase</strong> — hosting bazy danych, uwierzytelnianie, przechowywanie zdjęć, analityka i raporty błędów</li>
-      <li><strong>Anthropic</strong> — dostawca modelu AI do rozpoznawania roślin i diagnozy chorób. Zdjęcia nie są wykorzystywane do trenowania modeli ani przechowywane długoterminowo</li>
-      <li><strong>Apple Inc. / Google LLC</strong> — operatorzy płatności w ramach subskrypcji (App Store / Google Play)</li>
-    </ul>
-    <p>Nie sprzedajemy danych osobowych użytkowników podmiotom trzecim.</p>
-  </div>
+<h2>4. Komu przekazujemy dane</h2>
+<p>Nie sprzedajemy danych i nie przekazujemy ich do celów reklamowych. Korzystamy z następujących
+dostawców, którzy przetwarzają dane w naszym imieniu:</p>
+<table>
+  <tr><th>Dostawca</th><th>Co otrzymuje</th><th>W jakim celu</th></tr>
+  <tr><td>Google Firebase (Authentication, Realtime Database, Analytics, Crashlytics)</td><td>dane konta, dane o roślinach, treści z Dżungli, zdarzenia analityczne i raporty awarii</td><td>uwierzytelnianie, przechowywanie danych, statystyki, diagnostyka</td></tr>
+  <tr><td>Anthropic (Claude)</td><td>zdjęcie rośliny albo opis problemu, który sam wyślesz</td><td>diagnoza rośliny i porady w Poradniku</td></tr>
+  <tr><td>Kindwise (Plant.id)</td><td>zdjęcie rośliny, które sam wyślesz</td><td>rozpoznanie gatunku</td></tr>
+  <tr><td>Perenual</td><td>wyłącznie nazwa łacińska gatunku</td><td>pobranie zdjęcia poglądowego gatunku</td></tr>
+  <tr><td>Open-Meteo</td><td>współrzędne wybranego miasta</td><td>prognoza pogody</td></tr>
+  <tr><td>Zapier</td><td>treść zgłoszenia, nazwa użytkownika, identyfikator konta</td><td>przekazanie zgłoszenia do obsługi</td></tr>
+</table>
+<p>Zdjęcia wysyłane do Anthropic i Kindwise trafiają tam <strong>tylko wtedy, gdy sam uruchomisz skaner
+albo diagnozę</strong>. Nie wysyłamy tam zdjęć zapisanych w Twojej kolekcji.</p>
+<p>Dane przechowywane są na serwerach Google w Unii Europejskiej (region europe-west1). Przekazanie
+danych do dostawców spoza EOG odbywa się na podstawie standardowych klauzul umownych.</p>
 
-  <div class="section">
-    <h2>6. Przekazywanie danych poza EOG</h2>
-    <p>Niektórzy dostawcy (Google, Anthropic) mogą przetwarzać dane na serwerach poza Europejskim Obszarem Gospodarczym (np. w USA). Przekazywanie odbywa się w oparciu o Standardowe Klauzule Umowne (SCC) zatwierdzone przez Komisję Europejską.</p>
-  </div>
+<h2>5. Jak długo przechowujemy dane</h2>
+<p>Dane konta i dane o roślinach przechowujemy przez czas posiadania konta. Po usunięciu konta
+usuwamy je bez zbędnej zwłoki. Kopie zapasowe i logi diagnostyczne mogą zawierać dane do 30 dni
+po usunięciu. Treści opublikowane w Dżungli mogą pozostać widoczne, jeśli nie usuniesz ich przed
+skasowaniem konta.</p>
 
-  <div class="section">
-    <h2>7. Okres przechowywania danych</h2>
-    <p>Dane są przechowywane przez czas posiadania aktywnego konta. Po usunięciu konta dane osobowe są usuwane lub anonimizowane niezwłocznie, z zastrzeżeniem danych wymaganych przepisami prawa (np. dane rozliczeniowe).</p>
-  </div>
+<h2>6. Twoje prawa</h2>
+<p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania,
+przenoszenia oraz sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie. Przysługuje Ci
+także prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</p>
+<h3 id="usuwanie-konta">Usunięcie konta i danych</h3>
+<p><strong>W aplikacji:</strong> Profil → Ustawienia → Usuń konto. Operacja jest nieodwracalna
+i wykonuje się od razu.</p>
+<p><strong>Bez aplikacji:</strong> napisz na <strong>saavoniq@gmail.com</strong> z adresu e-mail
+przypisanego do konta. Usuwamy je w ciągu <strong>30 dni</strong> i potwierdzamy mailem.</p>
+<p><strong>Co jest usuwane:</strong> dane konta (e-mail, nazwa, zdjęcie profilowe, miasto), kolekcja
+roślin wraz z historią podlewania, notatkami i zdjęciami, lista życzeń, obserwacje, powiadomienia
+oraz Listki, poziom i nagrody z programu lojalnościowego.</p>
+<p><strong>Co może pozostać:</strong> posty i komentarze opublikowane w Dżungli, jeśli nie usuniesz
+ich przed usunięciem konta — usuń je wcześniej albo napisz do nas, a zrobimy to za Ciebie.
+Kopie zapasowe wygasają w ciągu <strong>90 dni</strong>. Dane, których wymaga od nas prawo
+(np. rozliczenia zakupów), przechowujemy przez okres wskazany przepisami.</p>
+<p><strong>Subskrypcja to osobna sprawa:</strong> usunięcie konta jej nie anuluje. Anuluj ją
+w Google Play → Płatności i subskrypcje, inaczej będzie się odnawiać.</p>
 
-  <div class="section">
-    <h2>8. Prawa użytkownika</h2>
-    <p>Zgodnie z RODO przysługuje prawo do:</p>
-    <ul>
-      <li>dostępu do swoich danych osobowych</li>
-      <li>sprostowania (poprawienia) danych</li>
-      <li>usunięcia danych („prawo do bycia zapomnianym")</li>
-      <li>ograniczenia przetwarzania</li>
-      <li>przenoszenia danych</li>
-      <li>wniesienia sprzeciwu wobec przetwarzania</li>
-      <li>cofnięcia zgody w dowolnym momencie</li>
-      <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (PUODO)</li>
-    </ul>
+<h2>7. Uprawnienia aplikacji</h2>
+<table>
+  <tr><th>Uprawnienie</th><th>Do czego służy</th></tr>
+  <tr><td>Aparat</td><td>zdjęcie rośliny do skanera, diagnozy albo do Twojej kolekcji</td></tr>
+  <tr><td>Galeria</td><td>wybór gotowego zdjęcia zamiast robienia nowego</td></tr>
+  <tr><td>Powiadomienia</td><td>przypomnienia o podlewaniu i pielęgnacji</td></tr>
+  <tr><td>Bluetooth</td><td>odczyt danych z opcjonalnego czujnika temperatury i wilgotności</td></tr>
+  <tr><td>Lokalizacja</td><td>wymagana przez system Android do wyszukiwania urządzeń Bluetooth na starszych wersjach systemu. <strong>Aplikacja nie odczytuje ani nie zapisuje Twojej lokalizacji.</strong></td></tr>
+  <tr><td>Czujnik światła</td><td>pomiar natężenia światła w luksomierzu; dane nie opuszczają urządzenia</td></tr>
+</table>
 
-    <h3>Usuwanie konta</h3>
-    <p>Konto wraz z powiązanymi danymi można usunąć bezpośrednio w aplikacji: <strong>Profil → Ustawienia → Usuń konto</strong>. Usunięcie jest nieodwracalne i skutkuje trwałym usunięciem kolekcji roślin, historii podlewania, postów i komentarzy.</p>
-    <p>Można też zażądać usunięcia danych kontaktując się pod adresem <a href="mailto:saavoniq@gmail.com">saavoniq@gmail.com</a>.</p>
-  </div>
+<h2>8. Dzieci</h2>
+<p>Aplikacja nie jest skierowana do dzieci poniżej 13. roku życia i świadomie nie zbieramy ich danych.</p>
 
-  <div class="section">
-    <h2>9. Dzieci i osoby niepełnoletnie</h2>
-    <p>Aplikacja przeznaczona jest dla osób, które ukończyły <strong>13 lat</strong>. Nie zbieramy świadomie danych osobowych dzieci poniżej tego wieku.</p>
-  </div>
+<h2>9. Zmiany polityki</h2>
+<p>O istotnych zmianach poinformujemy w aplikacji. Data ostatniej aktualizacji znajduje się na górze
+tej strony.</p>
 
-  <div class="section">
-    <h2>10. Subskrypcje i płatności</h2>
-    <p>Aplikacja oferuje model freemium z planami płatnymi (Plus, Pro). Płatności realizowane są wyłącznie przez App Store lub Google Play — nie przechowujemy danych kart płatniczych. Zarządzanie subskrypcją i zwroty odbywają się zgodnie z zasadami danego sklepu.</p>
-  </div>
+</section>
 
-  <div class="section">
-    <h2>11. Bezpieczeństwo danych</h2>
-    <p>Stosujemy środki techniczne i organizacyjne w celu ochrony danych: szyfrowanie połączeń, uwierzytelnianie dostępu do bazy danych oraz reguły bezpieczeństwa ograniczające dostęp wyłącznie zalogowanym użytkownikom.</p>
-  </div>
+<hr class="sep">
 
-  <div class="section">
-    <h2>12. Zmiany w polityce prywatności</h2>
-    <p>Zastrzegamy sobie prawo do wprowadzania zmian. O istotnych zmianach poinformujemy za pośrednictwem aplikacji lub poczty elektronicznej. Data ostatniej aktualizacji znajduje się na początku dokumentu.</p>
-  </div>
+<section id="en">
 
-  <div class="contact-box">
-    <p>Pytania dotyczące prywatności?</p>
-    <a href="mailto:saavoniq@gmail.com">saavoniq@gmail.com</a>
-  </div>
+<h1>Plaantu — Privacy Policy</h1>
+<p class="sub">Last updated: 31 July 2026</p>
 
-</main>
+<h2>1. Data controller</h2>
+<p>The controller of personal data processed in the <strong>Plaantu</strong> mobile application is the
+app publisher, reachable at <strong>saavoniq@gmail.com</strong>.</p>
+
+<h2>2. Data we collect</h2>
+<p><strong>Account data:</strong> e-mail address (sign-up by e-mail, Google or Facebook), username and
+display name, profile picture or chosen avatar, and the city you enter together with its coordinates.</p>
+<p><strong>The app does not read your device location.</strong> You type the city yourself and it is used
+only to fetch a weather forecast, which drives the watering schedule.</p>
+<p><strong>Plant data:</strong> plant names and species, rooms, position settings, watering, fertilising
+and repotting history, your text notes and plant photos, and your wishlist.</p>
+<p><strong>Community data (Jungle):</strong> posts, photos, comments and likes you publish, your
+followers and followed users, and any content reports you submit. Content published in the Jungle is
+visible to other users of the app.</p>
+<p><strong>Loyalty programme data (Leaves):</strong> the number of Leaves you have collected, the level
+you have reached and the rewards you have unlocked, plus a <strong>daily activity log</strong> — how
+many times on a given day you watered a plant, added a note, a photo, a post or a comment. The log
+exists solely to enforce daily earning caps and covers only the current day; older entries are
+overwritten.</p>
+<p><strong>Your level and title are publicly visible in the Jungle</strong> — a frame in your level's
+colour appears next to your name, and from level 15 a title as well. Other users can therefore tell
+roughly how long and how intensively you use the app. If you would rather they did not, you can turn
+level visibility off in your profile settings. Leaves keep accruing, but your frame and title stop
+appearing on your <strong>new</strong> posts and comments. Content published earlier keeps the level
+recorded at the time of posting — you can delete it if you want that gone.</p>
+<p>Your level affects access to some features (extra diagnoses, Advisor questions, plant slots). This is
+not automated decision-making within the meaning of Art. 22 GDPR — the rules are published, identical
+for everyone and described in the Terms of Service.</p>
+<p><strong>Technical data:</strong> anonymous analytics events (Firebase Analytics) and crash reports
+(Firebase Crashlytics), including device model, OS version and the error trace.</p>
+
+<h2>3. Why we process data</h2>
+<p>To run your account and provide the service, to build watering schedules and send reminders, to
+identify and diagnose plants from photos you submit, to provide community features, and to run the
+Leaves loyalty programme (all: Art. 6(1)(b) GDPR — performance of a contract); to prevent abuse of the
+loyalty programme, and to improve app stability and handle your reports (Art. 6(1)(f)
+GDPR — legitimate interest).</p>
+
+<h2>4. Who we share data with</h2>
+<p>We do not sell your data and do not share it for advertising. We use the following processors:
+<strong>Google Firebase</strong> (authentication, database, analytics, crash reporting),
+<strong>Anthropic</strong> (plant diagnosis — receives only the photo or problem description you
+submit), <strong>Kindwise / Plant.id</strong> (species identification — receives only the photo you
+submit), <strong>Perenual</strong> (receives only a species Latin name, to fetch a reference photo),
+<strong>Open-Meteo</strong> (receives the coordinates of your chosen city) and <strong>Zapier</strong>
+(receives the content of a report you send us, your display name and account identifier).</p>
+<p>Photos are sent to Anthropic and Kindwise <strong>only when you actively start a scan or a
+diagnosis</strong>. Photos stored in your collection are never sent there.</p>
+<p>Data is stored on Google servers in the European Union (region europe-west1). Transfers to
+providers outside the EEA rely on Standard Contractual Clauses.</p>
+
+<h2>5. Retention</h2>
+<p>We keep account and plant data for as long as your account exists, and delete it without undue delay
+once the account is removed. Backups and diagnostic logs may retain data for up to 30 days after
+deletion. Content published in the Jungle may remain visible if you do not delete it before removing
+your account.</p>
+
+<h2>6. Your rights</h2>
+<p>You have the right to access, rectify, erase, restrict and port your data, and to object to
+processing based on legitimate interest. You may also lodge a complaint with your local supervisory
+authority (in Poland: Prezes Urzędu Ochrony Danych Osobowych).</p>
+<h3 id="account-deletion">Deleting your account and data</h3>
+<p><strong>In the app:</strong> Profile → Settings → Delete account. This is irreversible and takes
+effect immediately.</p>
+<p><strong>Without the app:</strong> write to <strong>saavoniq@gmail.com</strong> from the e-mail
+address on the account. We delete it within <strong>30 days</strong> and confirm by e-mail.</p>
+<p><strong>What is deleted:</strong> account data (e-mail, name, profile picture, city), your plant
+collection with watering history, notes and photos, your wishlist, follows, notifications, and your
+Leaves, level and loyalty-programme rewards.</p>
+<p><strong>What may remain:</strong> posts and comments published in the Jungle, unless you delete
+them before deleting the account — remove them first, or ask us and we will do it. Backups expire
+within <strong>90 days</strong>. Data we are legally required to keep (such as purchase records) is
+retained for the period the law prescribes.</p>
+<p><strong>Your subscription is separate:</strong> deleting the account does not cancel it. Cancel it
+in Google Play → Payments and subscriptions, or it will keep renewing.</p>
+
+<h2>7. Permissions</h2>
+<p><strong>Camera</strong> — photographing a plant for the scanner, the diagnosis or your collection.
+<strong>Photo library</strong> — choosing an existing picture instead of taking a new one.
+<strong>Notifications</strong> — watering and care reminders.
+<strong>Bluetooth</strong> — reading an optional temperature and humidity sensor.
+<strong>Location</strong> — required by Android itself to discover Bluetooth devices on older system
+versions; <strong>the app never reads or stores your location</strong>.
+<strong>Light sensor</strong> — measuring light levels in the light meter; this data never leaves your
+device.</p>
+
+<h2>8. Children</h2>
+<p>The app is not directed at children under 13 and we do not knowingly collect their data.</p>
+
+<h2>9. Changes</h2>
+<p>We will announce material changes in the app. The date of the latest revision is shown at the top of
+this page.</p>
+
+</section>
 
 <footer>
-  © 2026 Saavoniq. Wszelkie prawa zastrzeżone.
+  Plaantu · kontakt / contact: saavoniq@gmail.com
 </footer>
 
+</div>
 </body>
 </html>
