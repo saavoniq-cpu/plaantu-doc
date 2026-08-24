@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Plaantu</title>
+<!--
+  Strona-przekierowanie dla kodów QR z materiałów drukowanych.
+
+  DLACZEGO ISTNIEJE: jeden wydrukowany kod QR musi obsłużyć oba sklepy, a każdy
+  chce innego parametru — Android czyta `referrer`, Apple czyta `ct`. Bez tej
+  strony trzeba by drukować dwa kody obok siebie i połowa ludzi wybrałaby zły.
+
+  UŻYCIE:  .../go.html?c=krakow_kwiaciarnia
+  Kod kampanii `c` jedzie dalej do sklepu i wraca w raportach pozyskiwania.
+
+  TO JEST KOPIA ROBOCZA. Żywa strona stoi w repozytorium `plaantu-doc`
+  (GitHub Pages nie obsługuje repozytoriów prywatnych na darmowym planie).
+  Po każdej zmianie plik trzeba skopiować tam — tak samo jak `index.html`
+  i `regulamin.html`. Patrz `docs/DO_ZROBIENIA.md`, sekcja 8.
+-->
+<style>
+  :root {
+    --dark:#1a2e1a; --green:#3d7a3d; --light:#6aaa6a;
+    --cream:#f5f1ea; --bg:#f4f0e8; --ink:#1a1a14;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(160deg,#1a2e1a 0%,#2d5530 55%,#3d7a3d 100%);
+    color:var(--cream); text-align:center; padding:24px;
+    font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  .box { max-width:420px; width:100%; }
+  h1 { font-size:36px; font-weight:700; margin:0 0 8px; letter-spacing:-0.5px; }
+  h1 .aa { color:var(--light); }
+  p  { font-size:17px; line-height:1.5; opacity:.9; margin:0 0 28px; }
+  .sklepy { display:flex; flex-direction:column; gap:12px; }
+  a.btn {
+    display:block; padding:16px 20px; border-radius:16px; text-decoration:none;
+    font-size:17px; font-weight:600; background:var(--cream); color:var(--dark);
+  }
+  a.btn.obcy { background:rgba(245,241,234,.14); color:var(--cream);
+               border:1px solid rgba(245,241,234,.3); }
+  .czekaj { font-size:15px; opacity:.65; margin-top:24px; }
+  noscript { display:block; margin-top:20px; font-size:15px; opacity:.8; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>pl<span class="aa">aa</span>ntu</h1>
+  <p id="tekst">Otwieram sklep z aplikacją…</p>
+  <div class="sklepy" id="sklepy" hidden>
+    <a class="btn" id="lPlay" href="#">Pobierz ze Sklepu Play</a>
+    <a class="btn obcy" id="lApple" href="#">Pobierz z App Store</a>
+  </div>
+  <div class="czekaj" id="czekaj">Jeśli nic się nie dzieje, dotknij przycisku powyżej.</div>
+  <noscript>
+    Twoja przeglądarka ma wyłączony JavaScript.
+    <a href="https://play.google.com/store/apps/details?id=com.saavoniq.plaantu"
+       style="color:#d6e8c8">Sklep Play</a>
+  </noscript>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── Stałe ────────────────────────────────────────────────────────────────
+  var PAKIET   = 'com.saavoniq.plaantu';
+  var APPLE_ID = '';   // ⚠️ UZUPEŁNIĆ po zatwierdzeniu w App Store Connect
+  var APPLE_PT = '';   // ⚠️ identyfikator dostawcy (Provider Token), tamże
+  var GA4_ID   = '';   // ⚠️ opcjonalnie: strumień WWW w GA4, żeby liczyć skany
+
+  // ── Kod kampanii z adresu ────────────────────────────────────────────────
+  // Sanityzacja jest tu celowo: parametr trafia do adresu sklepu i do GA4,
+  // a pochodzi z kodu QR, który każdy może sobie wydrukować własny.
+  function kodKampanii() {
+    var m = /[?&]c=([^&]+)/.exec(window.location.search);
+    var s = m ? decodeURIComponent(m[1]) : '';
+    s = s.toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 40);
+    return s || 'brak_kodu';
+  }
+
+  var kod = kodKampanii();
+
+  // ── Adresy docelowe ──────────────────────────────────────────────────────
+  // Android: cała treść `referrer` musi być zakodowana JAKO JEDNA WARTOŚĆ,
+  // inaczej Play zobaczy jeden parametr zamiast trzech (MARKETING.md §6).
+  function adresPlay() {
+    var referrer = 'utm_source=print&utm_medium=qr&utm_campaign=' + kod;
+    return 'https://play.google.com/store/apps/details?id=' + PAKIET +
+           '&referrer=' + encodeURIComponent(referrer);
+  }
+
+  function adresApple() {
+    if (!APPLE_ID) return 'https://www.apple.com/app-store/';
+    return 'https://apps.apple.com/pl/app/id' + APPLE_ID +
+           '?ct=' + encodeURIComponent(kod) +
+           (APPLE_PT ? '&pt=' + encodeURIComponent(APPLE_PT) : '') + '&mt=8';
+  }
+
+  // ── Rozpoznanie systemu ──────────────────────────────────────────────────
+  var ua = navigator.userAgent || '';
+  var iOS = /iPad|iPhone|iPod/.test(ua) ||
+            // iPadOS 13+ podaje się za desktopowego Maca; rozróżnia dotyk.
+            (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+
+  // ── Licznik skanów (opcjonalny) ──────────────────────────────────────────
+  // Play Console powie, ile było INSTALACJI z danego kodu. Ta strona jest
+  // jedynym miejscem, w którym da się policzyć SKANY — a różnica między nimi
+  // to informacja, czy materiał nie działa, czy działa i odbija się o sklep.
+  function policzSkan(gotowe) {
+    var poszlo = false;
+    var dalej = function () { if (!poszlo) { poszlo = true; gotowe(); } };
+    if (!GA4_ID) { dalej(); return; }
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+      s.onerror = dalej;
+      document.head.appendChild(s);
+      window.gtag('js', new Date());
+      window.gtag('config', GA4_ID, { send_page_view: false });
+      window.gtag('event', 'qr_scan', {
+        campaign: kod,
+        platforma: iOS ? 'ios' : (android ? 'android' : 'inne')
+      });
+    } catch (e) { /* pomiar nigdy nie może zablokować przekierowania */ }
+    // Nie czekamy na potwierdzenie z GA4 dłużej niż pół sekundy — użytkownik
+    // stoi w kwiaciarni z telefonem w ręku, a nie przy biurku.
+    setTimeout(dalej, 500);
+  }
+
+  // ── Działanie ────────────────────────────────────────────────────────────
+  var lPlay = document.getElementById('lPlay');
+  var lApple = document.getElementById('lApple');
+  lPlay.href = adresPlay();
+  lApple.href = adresApple();
+
+  function pokazWybor(powod) {
+    document.getElementById('tekst').textContent = powod;
+    document.getElementById('sklepy').hidden = false;
+    document.getElementById('czekaj').hidden = true;
+  }
+
+  policzSkan(function () {
+    if (android) {
+      window.location.replace(adresPlay());
+    } else if (iOS && APPLE_ID) {
+      window.location.replace(adresApple());
+    } else if (iOS) {
+      // Aplikacji jeszcze nie ma w App Store — lepiej powiedzieć to wprost,
+      // niż wyrzucić kogoś na pustą stronę Apple.
+      pokazWybor('Wersja na iPhone’a jest w drodze. Zajrzyj za kilka dni.');
+      lApple.hidden = true;
+    } else {
+      pokazWybor('Zeskanuj ten kod telefonem albo wybierz sklep:');
+      if (!APPLE_ID) lApple.hidden = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
