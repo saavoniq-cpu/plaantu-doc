@@ -69,7 +69,12 @@
 
   // ── Stałe ────────────────────────────────────────────────────────────────
   var PAKIET   = 'com.saavoniq.plaantu';
-  var APPLE_ID = '';   // ⚠️ UZUPEŁNIĆ po zatwierdzeniu w App Store Connect
+  // Identyfikator z App Store Connect. Do 9 września 2026 stał tu pusty napis,
+  // choć `1.0` było w App Store od sierpnia — a przy pustym każdy iPhone, który
+  // zeskanował nasz kod QR, dostawał „Wersja na iPhone'a jest w drodze"
+  // i ukryte oba przyciski. Wpis nie ma jak się zdezaktualizować: identyfikator
+  // aplikacji w App Store jest stały przez całe jej życie.
+  var APPLE_ID = '6797288092';
   var APPLE_PT = '';   // ⚠️ identyfikator dostawcy (Provider Token), tamże
   var GA4_ID   = '';   // ⚠️ opcjonalnie: strumień WWW w GA4, żeby liczyć skany
 
